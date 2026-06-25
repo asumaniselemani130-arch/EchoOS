@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EchoPhone — EchoOS 1.0 Prototype</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="stage" aria-label="EchoPhone interactive prototype">
+      <section class="intro">
+        <p class="eyebrow">EchoOS 1.0</p>
+        <h1>A phone that learns you.</h1>
+        <p>
+          This prototype turns the EchoOS concept into a clickable phone. Switch between
+          Lock Screen, Home, Echo Hub, Quick Panel, Settings, Setup, and Assistant to see
+          how the OS feels in action.
+        </p>
+        <div class="actions" aria-label="Prototype navigation">
+          <button class="nav-button active" data-screen="lock">Lock</button>
+          <button class="nav-button" data-screen="home">Home</button>
+          <button class="nav-button" data-screen="hub">Echo Hub</button>
+          <button class="nav-button" data-screen="quick">Quick Panel</button>
+          <button class="nav-button" data-screen="settings">Settings</button>
+          <button class="nav-button" data-screen="setup">Setup</button>
+          <button class="nav-button" data-screen="assistant">Assistant</button>
+        </div>
+      </section>
+
+      <section class="phone" aria-live="polite">
+        <div class="phone-glow"></div>
+        <div class="device">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span class="status-icons">▰ Wi‑Fi 87%</span>
+          </div>
+
+          <section class="screen active" id="screen-lock" aria-label="Lock Screen">
+            <div class="lock-top">
+              <span>Thursday, June 25</span>
+              <strong>9:41</strong>
+              <p class="echo-glance">📍 Leave in 12 minutes</p>
+            </div>
+            <div class="lock-spacer"></div>
+            <div class="notification-stack">
+              <article class="glass-card compact"><strong>Messages</strong><span>Mom texted 5 minutes ago</span></article>
+              <article class="glass-card compact"><strong>School</strong><span>Math assignment due today</span></article>
+            </div>
+            <p class="home-indicator-label">Swipe up to unlock</p>
+          </section>
+
+          <section class="screen" id="screen-home" aria-label="Home Screen">
+            <header class="home-header">
+              <div>
+                <p class="eyebrow">EchoOS</p>
+                <h2>Good morning, Asumani</h2>
+                <span>72° · Class at 9:30</span>
+              </div>
+              <button class="orb" data-screen="assistant" aria-label="Open Echo Assistant"></button>
+            </header>
+            <article class="glass-card weather-card">
+              <span>Now</span>
+              <strong>Partly cloudy</strong>
+              <p>Echo will remind you to leave when traffic changes.</p>
+            </article>
+            <div class="app-grid" aria-label="App grid">
+              <button>Notes</button><button>Calendar</button><button>Music</button><button>Camera</button>
+              <button>School</button><button>Browser</button><button>Files</button><button>Gallery</button>
+              <button>Creator</button><button>Tasks</button><button>Maps</button><button>Health</button>
+            </div>
+            <nav class="dock" aria-label="Dock"><button>Phone</button><button>Messages</button><button>Browser</button><button>Camera</button></nav>
+          </section>
+
+          <section class="screen" id="screen-hub" aria-label="Echo Hub">
+            <header class="panel-header"><p class="eyebrow">Swipe left</p><h2>Echo Hub</h2></header>
+            <div class="hub-list">
+              <article class="glass-card"><span>NOW</span><strong>Mom texted · Class starts in 20 min</strong><p>Two items need attention right now.</p></article>
+              <article class="glass-card"><span>NEXT</span><strong>Leave in 12 minutes</strong><p>Echo is watching traffic and battery.</p></article>
+              <article class="glass-card"><span>LATER</span><strong>Homework due tomorrow</strong><p>Review Episode 1 notes after dinner.</p></article>
+              <article class="glass-card"><span>FOCUS</span><strong>Writing Layer suggested</strong><p>Silence distractions and open your anime notes.</p></article>
+              <article class="glass-card"><span>INSIGHTS</span><strong>You focused 17% longer this week</strong><p>Informative, not judgmental.</p></article>
+            </div>
+          </section>
+
+          <section class="screen" id="screen-quick" aria-label="Quick Panel">
+            <header class="panel-header"><p class="eyebrow">Swipe down</p><h2>Quick Panel</h2></header>
+            <div class="quick-grid">
+              <button class="toggle on">Wi‑Fi</button><button class="toggle on">Bluetooth</button>
+              <button class="toggle">Mobile Data</button><button class="toggle">Flashlight</button>
+              <button class="toggle on">Focus Mode</button><button class="toggle on">Echo</button>
+            </div>
+            <article class="glass-card"><strong>Brightness</strong><div class="meter"><span style="width: 72%"></span></div></article>
+            <article class="glass-card"><strong>Notification calm mode</strong><p>Messages and urgent alerts stay separate. Social and games are bundled.</p></article>
+          </section>
+
+          <section class="screen" id="screen-settings" aria-label="Settings">
+            <header class="panel-header"><p class="eyebrow">Settings</p><h2>Echo Intelligence</h2></header>
+            <div class="settings-list">
+              <button>Wi‑Fi <span>Connected</span></button>
+              <button>Display <span>Echo Glass</span></button>
+              <button>Battery <span>Until 11:30 PM</span></button>
+              <button class="highlight">🧠 Learning Level <span>Balanced</span></button>
+              <button>Prediction Strength <span>Medium</span></button>
+              <button>Memory Settings <span>Review</span></button>
+              <button>Privacy Dashboard <span>Open</span></button>
+            </div>
+          </section>
+
+          <section class="screen" id="screen-setup" aria-label="Setup">
+            <header class="panel-header"><p class="eyebrow">Welcome</p><h2>Let's build your experience.</h2></header>
+            <article class="glass-card setup-card"><span>Question 1</span><strong>Who are you?</strong><div class="chip-row"><button>Student</button><button>Creator</button><button>Custom</button></div></article>
+            <article class="glass-card setup-card"><span>Question 2</span><strong>What matters most?</strong><div class="chip-row"><button>Creativity</button><button>Productivity</button><button>Balance</button></div></article>
+            <article class="glass-card setup-card"><span>Question 3</span><strong>How involved should Echo be?</strong><div class="chip-row"><button>Minimal</button><button>Balanced</button><button>Adaptive</button></div></article>
+            <button class="primary-action">Create Echo Profile</button>
+          </section>
+
+          <section class="screen" id="screen-assistant" aria-label="Echo Assistant">
+            <header class="panel-header"><p class="eyebrow">Echo Assistant</p><h2>How can I help?</h2></header>
+            <div class="assistant-orb"></div>
+            <article class="glass-card"><strong>Try: “I need to finish Episode 1 tonight.”</strong><p>Echo can open your writing app, enable Focus Layer, silence distractions, and pull relevant notes.</p></article>
+            <article class="glass-card"><strong>Try: “I'm tired.”</strong><p>Echo can suggest Wind Down Mode if your sleep pattern changed.</p></article>
+            <button class="primary-action">Start intent flow</button>
+          </section>
+
+          <div class="home-indicator"></div>
+        </div>
+      </section>
+    </main>
+    <script src="src/app.js"></script>
+  </body>
+</html>
+const buttons = document.querySelectorAll('[data-screen]');
+const screens = document.querySelectorAll('.screen');
+const navButtons = document.querySelectorAll('.nav-button');
+
+function showScreen(name) {
+  screens.forEach((screen) => {
+    screen.classList.toggle('active', screen.id === `screen-${name}`);
+  });
+  navButtons.forEach((button) => {
+    button.classList.toggle('active', button.dataset.screen === name);
+  });
+}
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => showScreen(button.dataset.screen));
+});
+:root {
+  color-scheme: dark;
+  --bg: #060812;
+  --panel: rgba(15, 24, 39, 0.68);
+  --panel-strong: rgba(26, 39, 61, 0.82);
+  --line: rgba(205, 241, 255, 0.22);
+  --text: #f3fbff;
+  --muted: #9bb0c3;
+  --cyan: #7cf7e4;
+  --purple: #b58cff;
+  --blue: #74a7ff;
+  --radius-lg: 32px;
+  --radius-md: 22px;
+  --shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 45%, rgba(124, 247, 228, 0.34), transparent 25%),
+    radial-gradient(circle at 82% 20%, rgba(181, 140, 255, 0.34), transparent 28%),
+    linear-gradient(135deg, #05060f, #101827 54%, #160c22);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  background:
+    linear-gradient(120deg, transparent 20%, rgba(124, 247, 228, 0.16), transparent 38%),
+    linear-gradient(150deg, transparent 45%, rgba(181, 140, 255, 0.18), transparent 62%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+button {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(280px, 520px) minmax(330px, 430px);
+  gap: clamp(28px, 6vw, 92px);
+  align-items: center;
+  width: min(1180px, calc(100% - 32px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.intro p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 54ch;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.nav-button,
+.chip-row button,
+.primary-action {
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.nav-button.active,
+.primary-action {
+  color: #061014;
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  box-shadow: 0 10px 32px rgba(124, 247, 228, 0.18);
+}
+
+.phone {
+  display: grid;
+  place-items: center;
+}
+
+.device {
+  position: relative;
+  width: min(100%, 390px);
+  aspect-ratio: 9 / 19.5;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(223, 248, 255, 0.36);
+  border-radius: 48px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.14), transparent 16%),
+    radial-gradient(circle at 28% 16%, rgba(124, 247, 228, 0.24), transparent 22%),
+    radial-gradient(circle at 80% 78%, rgba(181, 140, 255, 0.28), transparent 28%),
+    #07101c;
+  box-shadow: var(--shadow), inset 0 0 0 8px rgba(255, 255, 255, 0.03);
+}
+
+.status-bar {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px;
+  color: rgba(243, 251, 255, 0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.screen {
+  position: absolute;
+  inset: 48px 18px 28px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  animation: rise 280ms ease;
+}
+
+.screen.active { display: flex; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.lock-top { text-align: center; }
+.lock-top strong { display: block; font-size: 4.4rem; letter-spacing: -0.08em; }
+.echo-glance { display: inline-flex; padding: 10px 14px; border-radius: 999px; background: rgba(0,0,0,0.28); border: 1px solid var(--line); }
+.lock-spacer { flex: 1; }
+.home-indicator-label { color: var(--muted); text-align: center; }
+
+.home-header,
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+h2 { margin: 0; font-size: 1.7rem; letter-spacing: -0.05em; }
+.home-header span { color: var(--muted); }
+
+.orb,
+.assistant-orb {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: conic-gradient(from 80deg, var(--cyan), var(--purple), var(--blue), var(--cyan));
+  box-shadow: 0 0 32px rgba(124, 247, 228, 0.45);
+}
+
+.assistant-orb {
+  width: 120px;
+  height: 120px;
+  margin: 16px auto;
+}
+
+.glass-card {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  backdrop-filter: blur(22px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.glass-card span { color: var(--cyan); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; }
+.glass-card strong { display: block; margin: 4px 0; }
+.glass-card p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.45; }
+.compact { display: flex; justify-content: space-between; gap: 14px; }
+.compact span { color: var(--muted); letter-spacing: 0; font-weight: 600; text-transform: none; }
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: auto;
+}
+
+.app-grid button {
+  aspect-ratio: 1;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
+  border: 1px solid var(--line);
+  font-size: 0.72rem;
+}
+
+.dock {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid var(--line);
+}
+
+.dock button { padding: 10px 4px; border-radius: 16px; background: rgba(255,255,255,0.08); font-size: 0.68rem; }
+.hub-list, .settings-list { display: flex; flex-direction: column; gap: 10px; overflow: auto; padding-right: 2px; }
+
+.quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.toggle { min-height: 70px; border-radius: 22px; background: rgba(255,255,255,0.08); border: 1px solid var(--line); }
+.toggle.on { background: linear-gradient(135deg, rgba(124,247,228,0.72), rgba(181,140,255,0.5)); }
+.meter { height: 10px; margin-top: 10px; border-radius: 99px; background: rgba(255,255,255,0.12); overflow: hidden; }
+.meter span { display: block; height: 100%; background: var(--cyan); }
+
+.settings-list button {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--line);
+  text-align: left;
+}
+.settings-list span { color: var(--muted); }
+.settings-list .highlight { border-color: rgba(124,247,228,0.6); background: rgba(124,247,228,0.12); }
+
+.setup-card { display: grid; gap: 10px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.primary-action { width: 100%; margin-top: auto; font-weight: 800; }
+
+.home-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  width: 120px;
+  height: 5px;
+  transform: translateX(-50%);
+  border-radius: 99px;
+  background: rgba(255,255,255,0.72);
+}
+
+@media (max-width: 880px) {
+  .stage { grid-template-columns: 1fr; }
+  .intro { text-align: center; }
+  .intro p { margin-left: auto; margin-right: auto; }
+  .actions { justify-content: center; }
+}
